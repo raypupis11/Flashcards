@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Flashcards Interativos</h1>
+  </header>
+  <main>
+    <section id="flashcards-container"></section>
+    <button id="add-flashcard-btn">Adicionar Flashcard</button>
+    <button id="remove-flashcard-btn">Remover Flashcard</button>
+  </main>
+
+  <div id="flashcard-remove-container">
+      
+  </div>
+
+  <div id="flashcard-form-container">
+    <form id="flashcard-form">
+      <label for="question">Pergunta:</label>
+      <input type="text" id="question" required>
+      <label for="answer">Resposta:</label>
+      <input type="text" id="answer" required>
+      <button type="submit">Adicionar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
