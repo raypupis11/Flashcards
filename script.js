@@ -3,7 +3,7 @@ const addFlashcardBtn = document.getElementById('add-flashcard-btn');
 const flashcardFormContainer = document.getElementById('flashcard-form-container');
 const flashcardForm = document.getElementById('flashcard-form');
 
-// Lista fixa de flashcards
+
 const fixedFlashcards = [
   { question: "O que é HTML?", answer: "É uma linguagem de marcação usada para estruturar conteúdo na web." },
   { question: "O que é CSS?", answer: "É uma linguagem de estilo usada para definir a aparência de páginas web." },
@@ -13,19 +13,19 @@ const fixedFlashcards = [
   { question: "Para que serve o Git?", answer: "É um sistema de controle de versões usado para gerenciar projetos de código." },
 ];
 
-// Função para criar flashcards fixos
+
 function initializeFlashcards() {
-  // Primeiro, carregar flashcards do localStorage, se existirem
+
   const savedFlashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
 
-  // Adicionar os flashcards fixos apenas na primeira execução
+
   if (!localStorage.getItem('flashcardsInitialized')) {
     fixedFlashcards.forEach(flashcard => savedFlashcards.push(flashcard));
     localStorage.setItem('flashcards', JSON.stringify(savedFlashcards));
     localStorage.setItem('flashcardsInitialized', true);
   }
 
-  // Renderizar os flashcards
+
   savedFlashcards.forEach(({ question, answer }) => addFlashcard(question, answer));
 }
 
@@ -43,14 +43,14 @@ function addFlashcard(question, answer) {
   flashcardsContainer.appendChild(flashcard);
 }
 
-// Salvar flashcard no localStorage
+
 function saveFlashcardToLocalStorage(question, answer) {
   const savedFlashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
   savedFlashcards.push({ question, answer });
   localStorage.setItem('flashcards', JSON.stringify(savedFlashcards));
 }
 
-// Evento para adicionar novo flashcard
+
 addFlashcardBtn.addEventListener('click', () => {
   flashcardFormContainer.style.display = 'flex';
 });
@@ -68,5 +68,5 @@ flashcardForm.addEventListener('submit', (e) => {
   flashcardFormContainer.style.display = 'none';
 });
 
-// Inicializar os flashcards ao carregar a página
+
 initializeFlashcards();
